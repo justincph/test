@@ -10,7 +10,7 @@ def chat(prompt, text, tmpr, max):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "user", "content": rf"Give me the function of generative dictionary, I need the definition of the word in the sentence I give you. Also, I need a sentence including the word.{prompt}"},
+            {"role": "user", "content": rf"Provide me the definition of the word in the sentence I give you. Also, I need a sentence including the word.{prompt}"},
         ],  # 提示(promp)
         temperature=float(tmpr),
         max_tokens=int(max),
@@ -134,10 +134,10 @@ temp_tmpr = 0.3
 temp_max = 500
 
 
-"""================================================================== streamlit 操作 =================================================================="""
+#"""================================================================== streamlit 操作 =================================================================="""
 
 # 請在下面的 API key 欄位輸入您申請的 API key。
-key = st.text_input('輸入您的openai API key')
+#key = st.text_input('輸入您的openai API key')
 input_key=st.secrets["api_key"]
 openai.api_key = input_key
 
